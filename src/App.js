@@ -31,14 +31,16 @@ function  App()  {
     const [account] = await window.ethereum.request({ method: 'eth_requestAccounts' })
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const contract = new ethers.Contract(tokenAddress, Token.abi, provider);
+    const totalSupply = await contract.totalSupply();
     console.log(account)
+    console.log(totalSupply.toNumber())
     const balance = await contract.balanceOf(account);
     console.log('balance',balance.toNumber())
   }
 
 
   async function transfer(){
-    const [account] = await window.ethereum.request({ method: 'eth_requestAccounts' })
+    let [account] = await window.ethereum.request({ method: 'eth_requestAccounts' })
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const address = await signer.getAddress();
@@ -48,6 +50,7 @@ function  App()  {
     const gasPrice = await signer.getGasPrice();
     console.log('gasPrice',gasPrice.toString());
     const trCount = await signer.getTransactionCount();
+
     console.log('trCount',trCount.toString());
     const estimategas = await signer.estimateGas();
     console.log('estimategas',estimategas.toString());
@@ -55,13 +58,20 @@ function  App()  {
     // const ensName = await signer.resolveName("ethers.eth");
     // console.log(ensName);
     const contract = new ethers.Contract(tokenAddress, Token.abi, signer);
+    const account2 = "0x70997970c51812dc3a010c7d01b50e0d17dc79c8";
     let balance = await contract.balanceOf(account);
     console.log('balance1',balance.toNumber())
-    const transaction = await contract.transfer(account, 100);
-    await transaction.wait();
+    const transaction = await contract.transfer(account2, 100);
+    // const res = await transaction.wait();
+    // console.log('res',res);
     console.log('transaction',transaction);
-     balance = await contract.balanceOf(account);
+     balance = await contract.balanceOf(account2);
     console.log('balance2',balance.toNumber())
+  }
+
+  async function getContract() {
+    //const contract = await ethers.getContract("Token", tokenAddress);
+    //console.log(contract);
   }
 
   return (
@@ -71,6 +81,7 @@ function  App()  {
       <button onClick={queryBlockchain}>Query Blockchain</button>
       <button onClick={getBalance}>Get Balance</button>
       <button onClick={transfer}>Transfer</button>
+      <button onClick={getContract}>Get Contract</button>
     </div>
   );
 }
