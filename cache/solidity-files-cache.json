@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "D:\\eth\\eth-app\\contracts\\Token.sol": {
-      "lastModificationDate": 1656404217465,
-      "contentHash": "372b5bb1bd8a46dd46237e2b94e10243",
+      "lastModificationDate": 1656471550906,
+      "contentHash": "d19281f8ffaf14b5cc07e03c84c7dd1e",
       "sourceName": "contracts/Token.sol",
       "solcConfig": {
         "version": "0.7.3",
