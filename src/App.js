@@ -1,8 +1,10 @@
 import './App.css';
 import {ethers} from 'ethers';
 import Token from './artifacts/contracts/Token.sol/Token.json'
+import MyStorage from './artifacts/contracts/MyStorage.sol/MyStorage.json'
 
-const tokenAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
+const tokenAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+const storageToken = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
 const provider = new ethers.providers.Web3Provider(window.ethereum)
 
 function  App()  {
@@ -24,7 +26,11 @@ function  App()  {
   }
 
   async function queryBlockchain() {
-   
+    const [account] = await window.ethereum.request({ method: 'eth_requestAccounts' })
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const contract = new ethers.Contract(storageToken, MyStorage.abi, provider);
+    const totalSupply = await contract.helper(2);
+    console.log(totalSupply.toNumber());
   }
 
   async function getBalance() {

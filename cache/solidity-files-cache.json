@@ -1,9 +1,9 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "D:\\eth\\eth-app\\contracts\\Token.sol": {
-      "lastModificationDate": 1656471550906,
-      "contentHash": "d19281f8ffaf14b5cc07e03c84c7dd1e",
+    "/mnt/d/eth/eth-app/contracts/Token.sol": {
+      "lastModificationDate": 1661766000327,
+      "contentHash": "372b5bb1bd8a46dd46237e2b94e10243",
       "sourceName": "contracts/Token.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -38,9 +38,9 @@
         "Token"
       ]
     },
-    "D:\\eth\\eth-app\\node_modules\\hardhat\\console.sol": {
-      "lastModificationDate": 1656386584746,
-      "contentHash": "cc4777addd464ea56fa35b1c45df0591",
+    "/mnt/d/eth/eth-app/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1661757820647,
+      "contentHash": "4ff3cd2f6272c9a6516e9ee4f2b967d3",
       "sourceName": "hardhat/console.sol",
       "solcConfig": {
         "version": "0.7.3",
@@ -71,6 +71,41 @@
       ],
       "artifacts": [
         "console"
+      ]
+    },
+    "/mnt/d/eth/eth-app/contracts/MyStorage.sol": {
+      "lastModificationDate": 1661767851779,
+      "contentHash": "4c5e14dd262afc77ede963f9e64851ba",
+      "sourceName": "contracts/MyStorage.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "MyStorage"
       ]
     }
   }
