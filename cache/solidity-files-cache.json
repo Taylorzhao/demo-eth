@@ -74,8 +74,8 @@
       ]
     },
     "/mnt/d/eth/eth-app/contracts/MyStorage.sol": {
-      "lastModificationDate": 1661767851779,
-      "contentHash": "4c5e14dd262afc77ede963f9e64851ba",
+      "lastModificationDate": 1661826970491,
+      "contentHash": "5ac9504fe15ed202c1e7405406957bb4",
       "sourceName": "contracts/MyStorage.sol",
       "solcConfig": {
         "version": "0.7.3",
